@@ -1,0 +1,8 @@
+python-igraph
+networkx
+colorlover
+dash
+plotly
+pandas
+numpy
+sklearn
