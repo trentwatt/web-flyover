@@ -5,5 +5,5 @@ from placeholder import app as placeholder
 
 application = DispatcherMiddleware(flask_app, {
     '/web-flyover': web_flyover.server,
-    '/other': placeholder.server,
+    '/placeholder': placeholder.server,
 })  
