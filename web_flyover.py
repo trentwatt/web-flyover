@@ -228,7 +228,7 @@ def get_new_graph(vertex, sensitivity=0.75):
     
     
     
-    for _, (name, size, _, x, y, color) in df[df.type == 'in'].iterrows():
+    for _, (name, _, _, x, y, color) in df[df.type == 'in'].iterrows():
         trace = go.Scatter(x=[x], y=[y],
                            mode='markers',
                            hoverinfo='text', 
@@ -398,7 +398,8 @@ def dump_rank_data(clickData, n_clicks, sensitivity, history):
     
     ctx = dash.callback_context
     if app_start(ctx):
-        graph = get_new_graph('cdc.gov')
+        pass
+        # graph = get_new_graph('cdc.gov')
         
     else:
         trig = ctx.triggered[0]['prop_id'].split('.')[0]
