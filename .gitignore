@@ -1,0 +1,9 @@
+.vscode
+edgelists
+__pycache__
+.ipynb_checkpoints/
+.DS_Store
+shelf
+.mypy_cache
+TODO.md
+scripts
