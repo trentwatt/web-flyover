@@ -1,2 +1,1 @@
-web: gunicorn wsgi:application
-app:flask_app
+web: gunicorn web_flyover:server
