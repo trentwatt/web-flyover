@@ -1,9 +1,12 @@
-.vscode
-edgelists
 __pycache__
-.ipynb_checkpoints/
-.DS_Store
-shelf
 .mypy_cache
+.vscode
+.ipynb_checkpoints
+.DS_Store
+venv
+.env
+*.pyc
+shelf
 TODO.md
 scripts
+edgelists

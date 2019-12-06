@@ -6,19 +6,17 @@ import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 import ipdb
-
+import numpy as np
+import pandas as pd
+from igraph import Graph
+import networkx as nx
 import colorlover as cl
-
 from itertools import chain, combinations
 from collections import Counter, OrderedDict
 from functools import reduce
 import json
 
-import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-import pandas as pd
-from igraph import Graph
-import networkx as nx
+
 
 
 
@@ -81,7 +79,7 @@ def get_vs_and_sizes(vertex, sensitivity=0.75):
     
     vertices = list(in_v) + [vertex] + list(out_v)
     sizes = list(in_s) + [1.15] + list(out_s)
-    labels = ["<a href='https://{}'> {}</a>".format(i, i) for i in vertices]
+    # labels = ["<a href='https://{}'> {}</a>".format(i, i) for i in vertices]
     sizes = [30 * (size**3) for size in sizes]
     return tuple(vertices), tuple(sizes)
 
@@ -277,7 +275,7 @@ def get_new_graph(vertex, sensitivity=0.75):
 
 
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], requests_pathname_prefix='/web-flyover/')
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 server = app.server
 
@@ -427,4 +425,4 @@ def dump_rank_data(clickData, n_clicks, sensitivity, history):
 
 
 if __name__ ==  "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False)
